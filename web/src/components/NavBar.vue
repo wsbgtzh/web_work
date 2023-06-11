@@ -10,8 +10,15 @@ const logout = () => {
     router.push({ name: "login" });
 }
 
-const to_user = () => {
-    router.push({ name: "userprofile" });
+const to_user = userId => {
+    if (store.user.is_login) {
+        router.push({
+            name: "userprofile",
+            params: {
+                userId,
+            }
+        })
+    }
 }
 </script>
 
@@ -44,7 +51,7 @@ const to_user = () => {
                         <router-link class="nav-link" :to="{ name: 'login' }">登录</router-link>
                     </li>
                     <li class="nav-item" v-else>
-                        <a @click="to_user" style="cursor: pointer;" class="nav-link">{{
+                        <a @click="to_user(store.user.id)" style="cursor: pointer;" class="nav-link">{{
                             store.user.username
                         }}</a>
                     </li>
