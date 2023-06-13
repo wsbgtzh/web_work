@@ -5,5 +5,5 @@ import com.web.backend.pojo.User;
 import java.util.List;
 
 public interface UserlistService {
-    List<User> getUserlist();
+    List<User> getUserlist(String user_id);
 }

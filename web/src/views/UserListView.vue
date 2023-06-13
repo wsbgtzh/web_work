@@ -12,6 +12,9 @@ $.ajax({
     headers: {
         Authorization: "Bearer " + store.user.token,
     },
+    data: {
+        user_id: store.user.id
+    },
     success(resp) {
         userlist.value = resp;
     },
