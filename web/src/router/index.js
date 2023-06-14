@@ -30,7 +30,7 @@ const router = createRouter({
         requestAuth: true,
       }
     },
-    { 
+    {
       path: '/userprofile/:userId/',
       name: 'userprofile',
       component: UserProfileView,
@@ -70,11 +70,11 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-   if (to.meta.requestAuth && !useUserStore().user.is_login) {
-    next({name: "login"});
-   } else {
+  if (to.meta.requestAuth && !useUserStore().user.is_login) {
+    next({ name: "login" });
+  } else {
     next();
-   }
+  }
 })
 
 export default router

@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class RegisterServiceImpl implements RegisterService {
@@ -65,7 +63,18 @@ public class RegisterServiceImpl implements RegisterService {
             return map;
         }
         String encodedPassword = passwordEncoder.encode(password);
-        String photo = "https://cdn.acwing.com/media/user/profile/photo/98655_lg_89bb08e4c2.jpghttps://cdn.acwing.com/media/user/profile/photo/98655_lg_89bb08e4c2.jpg";
+        List<String> list = new LinkedList<String>(){{
+            add("https://s1.ax1x.com/2023/06/14/pCnGPPI.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnGiGt.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnGkxf.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnGmZQ.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnGMin.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnG1zV.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnG8MT.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnGJLF.png");
+        }};
+        Random r = new Random();
+        String photo = list.get(r.nextInt(8));
         User user = new User(null, username, encodedPassword, photo, null);
         userMapper.insert(user);
         map.put("error_message", "success");
