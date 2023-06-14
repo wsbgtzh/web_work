@@ -2,6 +2,7 @@
 import { useUserStore } from '../stores/user';
 import { reactive, ref } from 'vue';
 import $ from 'jquery';
+import { Modal } from 'bootstrap/dist/js/bootstrap.js';
 import router from '../router';
 const store = useUserStore();
 const public_posts = ref([]);
@@ -38,6 +39,7 @@ const public_post = () => {
             Authorization: "Bearer " + store.user.token
         },
         success(resp) {
+            Modal.getInstance('#add-post-btn').hide();
             refresh_publicpost();
         },
         error(resp) {
@@ -64,12 +66,12 @@ const open_profile = userId => {
         </div>
         <div class="col-11">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary post_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary post_btn" data-bs-toggle="modal" data-bs-target="#add-post-btn">
                 发布新鲜事
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="add-post-btn" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

@@ -64,14 +64,14 @@ public class RegisterServiceImpl implements RegisterService {
         }
         String encodedPassword = passwordEncoder.encode(password);
         List<String> list = new LinkedList<String>(){{
-            add("https://s1.ax1x.com/2023/06/14/pCnGPPI.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnGiGt.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnGkxf.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnGmZQ.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnGMin.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnG1zV.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnG8MT.png");
-            add("https://s1.ax1x.com/2023/06/14/pCnGJLF.png");
+            add("https://s1.ax1x.com/2023/06/14/pCnylKH.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCny1rd.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCny3qA.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCnyGVI.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCnyYIP.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCnyUG8.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCnydxg.jpg");
+            add("https://s1.ax1x.com/2023/06/14/pCnyDqs.jpg");
         }};
         Random r = new Random();
         String photo = list.get(r.nextInt(8));
